@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h1>INSERT DATA TO DATABASE</h1>
+<h1>DELETE DATA TO DATABASE</h1>
 
 <?php
 ini_set('display_errors', 1);
