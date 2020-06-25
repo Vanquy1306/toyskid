@@ -1,28 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-<title>Insert data to PostgreSQL with php - creating a simple web application</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<style>
-li {
-list-style: none;
-}
-</style>
-</head>
-<body>
-<h1>INSERT DATA TO DATABASE</h1>
-<h2>Enter data into student table</h2>
-<ul>
-    <form name="InsertData" action="InsertData.php" method="POST" >
-<li>Product ID:</li><li><input type="text" name="productid" /></li>
-<li>PName:</li><li><input type="text" name="pname" /></li>
-<li>PSize:</li><li><input type="text" name="psize" /></li>
-<li>Price:</li><li><input type="text" name="price" /></li>
-<li>Residual:</li><li><input type="text" name="residual" /></li>
-<li><input type="submit" /></li>
-</form>
-</ul>
-
 <?php
 
 if (empty(getenv("DATABASE_URL"))){
@@ -46,21 +21,20 @@ if($pdo === false){
 }
 
 //Khởi tạo Prepared Statement
-//$stmt = $pdo->prepare('INSERT INTO product (productid, pname, psize, price, residual) values (:id, :name, :size, :prize, :residual)');
+//$stmt = $pdo->prepare('INSERT INTO addresskh (fullname, mobilenumber, landmark, city) values (:fullname, :mobilenumber, :landmark, :city)');
 
-//$stmt->bindParam(':id','ab05');
-//$stmt->bindParam(':name','phone');
-//$stmt->bindParam(':size', 'big');
-//$stmt->bindParam(':prize', '30000');
-//$stmt->bindParam(':residual', '5');
+//$stmt->bindParam(':fullname','van quy');
+//$stmt->bindParam(':mobilenumber','0906564482');
+//$stmt->bindParam(':landmark', '86 le tan trung');
+//$stmt->bindParam(':city', 'Da Nang');
 //$stmt->execute();
-//$sql = "INSERT INTO product (productid, pname, psize, price, residual) VALUES('ab05', 'phone','big','30000','5')";
-$sql = "INSERT INTO product (productid, pname, psize, price, residual)"
-        . " VALUES('$_POST[productid]','$_POST[pname]','$_POST[psize]','$_POST[price]','$_POST[residual]')";
+//$sql = "INSERT INTO addresskh (fullname, mobilenumber, landmark, city) VALUES('van quy', '0906564482','86 le tan trung','Da Nang')";
+$sql = "INSERT INTO addresskh (fullname, mobilenumber, landmark, city)"
+        . " VALUES('$_POST[fullname]','$_POST[mobilenumber]','$_POST[landmark]','$_POST[city]')";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
  if (is_null($_POST[productid])) {
-   echo "productid must be not null";
+   echo "Error";
  }
  else
  {
@@ -71,5 +45,3 @@ $stmt = $pdo->prepare($sql);
     }
  }
 ?>
-</body>
-</html>
