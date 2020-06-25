@@ -40,9 +40,9 @@ $stmt = $pdo->prepare($sql);
  {
     if($stmt->execute() == TRUE){
         header("Location: home.html");
-    exit();
     } else {
-        echo "Error inserting record: ";
+        header("Location: checkout.html");
+            exit();
     }
  }
 ?>
