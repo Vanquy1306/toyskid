@@ -40,6 +40,7 @@ $stmt = $pdo->prepare($sql);
  {
     if($stmt->execute() == TRUE){
         header("Location: home.html");
+            exit();
     } else {
         header("Location: checkout.html");
             exit();
