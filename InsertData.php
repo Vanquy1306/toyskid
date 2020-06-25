@@ -33,7 +33,7 @@ $sql = "INSERT INTO addresskh (fullname, mobilenumber, landmark, city)"
         . " VALUES('$_POST[fullname]','$_POST[mobilenumber]','$_POST[landmark]','$_POST[city]')";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
- if (is_null($_POST[productid])) {
+ if (is_null($_POST[fullname])) {
    echo "Error";
  }
  else
