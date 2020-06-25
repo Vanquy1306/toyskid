@@ -39,7 +39,7 @@ $stmt = $pdo->prepare($sql);
  else
  {
     if($stmt->execute() == TRUE){
-        echo "Record inserted successfully.";
+        echo 'href="http://www.website.com/page.html"';
     } else {
         echo "Error inserting record: ";
     }
