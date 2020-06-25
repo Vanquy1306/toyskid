@@ -39,11 +39,9 @@ $stmt = $pdo->prepare($sql);
  else
  {
     if($stmt->execute() == TRUE){
-        alert('Order Successfull');
-            exit();
+echo '<script>alert("Order Successfully")</script>'; 
     } else {
-        alert('Order Error');
-            exit();
+echo '<script>alert("Order Fail")</script>'; 
     }
  }
 ?>
