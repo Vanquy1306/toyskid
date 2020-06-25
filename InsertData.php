@@ -39,10 +39,10 @@ $stmt = $pdo->prepare($sql);
  else
  {
     if($stmt->execute() == TRUE){
-        header("Location: home.html");
+        alert('Order Successfull');
             exit();
     } else {
-        header("Location: checkout.html");
+        alert('Order Error');
             exit();
     }
  }
